@@ -1,0 +1,33 @@
+<!-- error handling -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("enter first num");
+      let b = prompt("enter 2nd num");
+
+      // it is used when we want to show the error to user
+
+      if (isNaN(a) || isNaN(b)) {
+        throw SyntaxError("error error");           //it is throw a costom error 
+      }
+      let sum = parseInt(a) + parseInt(b);
+      // it use when we want to hide the error and give a massage to user
+
+      try {
+        console.log(sum * x);
+      } 
+      catch (error) {
+        console.log("error error");
+      }
+      finally{
+        console.log("file are closed")          // use of finialy -> if we write the full code in a function and write a return statment befor finilly then code inside the finilly will be run if we would't write finially then the code will be mot run
+      }
+    </script>
+  </body>
+</html>

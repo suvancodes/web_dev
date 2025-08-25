@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">abc</div>
+    <script>
+        // promises
+
+        // own made Promise
+
+        /*let prom = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if(a<=0){
+                reject("no promise for rendom value")               // why the promise rejected
+            }
+            else{
+                setTimeout(()=>{
+                    console.log("subho")                        // value of the promise 
+                    resolve("I am done")                        // a msg after resolving the promise
+                })
+            }
+        })
+
+        prom.then((a) => {                   // it used to find the value in promise 
+            console.log(a)
+        }).catch((err)=>{                   // it used to find error in promise
+                                            // it mostly used when user get problem of net is down
+            console.log(err)
+        })*/
+
+        // deal with mulity promises
+
+
+        let prom = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if(a<=0){
+                reject("no promise for rendom value")               
+            }
+            else{
+                setTimeout(()=>{
+                    console.log("subho")        
+                    resolve("I am done")        
+                }, 2000)
+            }
+        })
+
+        let prom1 = new Promise((resolve,reject)=>{
+            let a = Math.random()
+            if(a<10) reject("can not reachable")
+            else{
+                setInterval(()=>{
+                    document.getElementById("box").style.color = "red"
+                    console.log("I Am Red")
+                    resolve("I am done1")
+                },5000)
+                
+            }
+        })
+        
+        // add two promise in one 
+
+        
+        // let p3 = Promise.all([prom,prom1])
+
+        // API of promises
+        
+        // .allSettled
+        // settle mean promise rejact or resolve
+
+        // reject means promise was not settle successfully
+        // resolve means promise was settle successfully
+        
+        // let p3 = Promise.allSettled([prom,prom1])
+        
+        //.race
+
+        // let p3 = Promise.race([prom,prom1])
+
+        // .any
+
+        // let p3 = Promise.any([prom,prom1])
+
+
+        p3.then((a)=> {
+            console.log(a)
+        }).catch((err) => {
+            console.log(err)
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function getData() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log(454)
+          }, 0);
+        });
+      }
+
+      /*async function getData() {
+        let x = await fetch('https://jsonplaceholder.typicode.com/todos/1')         // 1st promise callected data form ......
+        let data =await x.json()             // passed data form.......
+        return (data) 
+      }*/
+
+      // using await
+
+
+      async function main() {
+        console.log("Loding modules...");
+        console.log("getting dat...");
+
+        let data = await getData();         //first use of await
+
+        console.log(data);
+        console.log("prosses data...");
+        console.log("tesk 2...");
+      }
+      main()
+      // using callback
+
+      /*data.then((v)=>{
+            console.log(v)
+            console.log("prosses data...")
+            console.log("tesk 2...")
+        })*/
+    </script>
+  </body>
+</html>
